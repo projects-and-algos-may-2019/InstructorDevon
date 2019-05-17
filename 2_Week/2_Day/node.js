@@ -42,6 +42,7 @@ class SLL {
             currentNode = currentNode.next;
         }
     }
+
     // returns the value of the last node
     removeLast() {
         // is this empty?
@@ -71,9 +72,49 @@ class SLL {
 
         // PROFIT??
     }
+
+    removeFirst() {
+        // grab the value from the head node
+        if(!this.head) {
+            throw Error("Cant remove from an empty list!");
+        }
+        let returnVal = this.head.value;
+        // advance head forward by one
+        this.head = this.head.next;
+        return returnVal;
+    }
+    // 0 => remove this.head
+    // 1 => remove this.head.next
+    // ...
+    removeAt(position) {
+
+        // EDGE CASE #1: empty list
+        // EDGE CASE #2: removing the last one
+        // EDGE CASE #3: position > size of list
+
+        // use a counter to track position
+        let count = 1;
+        let current = this.head;
+
+        // move through the list until we get to count >= postition
+        while(count < position && current.next !== null) {
+            count++;
+            current = current.next;
+        }
+
+        // remove node at next of current
+        let returnVal = current.next.value;
+        // removes ONLY the node after current
+        current.next = current.next.next;
+        return returnVal;
+
+
+
+
+    }
 }
 
 let myList = new SLL();
-myList.addToFront(1);
-myList.addToFront(2);
-myList.addToFront(3);
+myList.addToFront(3); // 0
+myList.addToFront(2); // 1
+myList.addToFront(1); // 2
