@@ -42,35 +42,7 @@ class SLL {
             currentNode = currentNode.next;
         }
     }
-    // returns the value of the last node
-    removeLast() {
-        // is this empty?
-        if(!this.head) {
-            throw Error("Cant remove from an empty list!");
-        }
-        // this this a one item list?
-        else if(!this.head.next) {
-            // we want to delete the head
-            let returnVal = this.head.value;
-            this.head = null;
-            return returnVal;
-        }
-
-        // go to ONE BEFORE the end of the list
-        let current = this.head;
-        while(current.next.next !== null) {
-            current = current.next;
-        }
-        // grab the value from the last node
-        let returnVal = current.next.value;
-        // end of loop: current.next is the last one
-        // detach the pointer (node.next = null)
-        current.next = null;
-        
-        return returnVal;
-
-        // PROFIT??
-    }
+    
 }
 
 let myList = new SLL();

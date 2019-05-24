@@ -21,3 +21,4 @@ class Person {
     }
 }
 
+let somebody = new Person('Amy', 56)

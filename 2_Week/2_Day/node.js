@@ -89,7 +89,7 @@ class SLL {
     removeAt(position) {
 
         // EDGE CASE #1: empty list
-        // EDGE CASE #2: removing the last one
+        // EDGE CASE #2: removing the first one (of a one node list)
         // EDGE CASE #3: position > size of list
 
         // use a counter to track position
